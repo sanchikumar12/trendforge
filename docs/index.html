@@ -3,121 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - TrendForge AI Carousel Maker</title>
+  <title>Privacy Policy | TrendForge – AI Carousel Maker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #09090E;
+      --card-bg: rgba(18, 18, 28, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #6366F1;
+      --accent-glow: rgba(99, 102, 241, 0.25);
+      --green: #10B981;
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-sub: #64748B;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background-color: #0A0A10;
-      color: #E2E8F0;
-      line-height: 1.6;
-      padding: 40px 20px;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 60px 20px;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 100% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 40%);
     }
-    .container {
-      max-width: 760px;
+    .wrapper {
+      max-width: 820px;
       margin: 0 auto;
-      background: #12121A;
-      padding: 40px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
+    .glass-container {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 32px;
+      padding: 50px 44px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
     }
-    .badge {
-      background: rgba(99,102,241,0.15);
-      color: #818CF8;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 12px;
-      border: 1px solid rgba(99,102,241,0.3);
-    }
-    h1 {
-      font-size: 28px;
-      font-weight: 900;
-      color: #FFFFFF;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-    .updated {
-      color: #94A3B8;
-      font-size: 13px;
-      margin-bottom: 32px;
-    }
-    h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #F8FAFC;
-      margin: 28px 0 12px;
+    .header-bar {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
     }
-    p, li {
-      color: #94A3B8;
-      font-size: 14px;
-      margin-bottom: 12px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    ul { padding-left: 20px; margin-bottom: 16px; }
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 16px;
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #6366F1, #EC4899);
       border-radius: 14px;
-      margin: 16px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 8px 20px var(--accent-glow);
+    }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--green);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 11px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--green);
+    }
+    h1 {
+      font-size: 34px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .meta {
+      color: var(--text-sub);
+      font-size: 13px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .intro {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 20px;
+      border-radius: 16px;
+      border-left: 3px solid var(--accent);
+    }
+    .section-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 26px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+    .section-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+    .section-card h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-card p, .section-card li {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .section-card ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .section-card li { margin-bottom: 8px; }
+    .contact-box {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.05));
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 24px;
+      padding: 30px;
+      margin-top: 36px;
+      text-align: center;
+    }
+    .contact-box h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    .contact-box p {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    .email-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+    .email-chip:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px var(--accent-glow);
     }
     footer {
       margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.06);
       text-align: center;
+      color: var(--text-sub);
       font-size: 12px;
-      color: #64748B;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    @media (max-width: 640px) {
+      body { padding: 20px 12px; }
+      .glass-container { padding: 30px 20px; border-radius: 24px; }
+      h1 { font-size: 26px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <div class="badge">🔥 TrendForge Mobile</div>
+  <div class="wrapper">
+    <div class="glass-container">
+      
+      <div class="header-bar">
+        <div class="brand">
+          <div class="brand-icon">⚡</div>
+          <span class="brand-title">TrendForge</span>
+        </div>
+        <div class="badge">Google Play Compliant</div>
+      </div>
+
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        <span>📅 Effective Date: August 20, 2026</span>
+        <span>🛡️ Application: TrendForge – AI Carousel Maker</span>
+      </div>
+
+      <div class="intro">
+        TrendForge ("we", "our", or "the App") is committed to protecting your privacy and maintaining complete data transparency. This policy outlines how user data is handled with zero data selling or unauthorized tracking.
+      </div>
+
+      <!-- 1. Local Storage -->
+      <div class="section-card">
+        <h2>🔒 1. Local-First Storage (Zero Cloud Profile Storage)</h2>
+        <p>Your Brand Kit details (Creator Name, @handle, Role, Theme Preferences) are stored <strong>exclusively on your local device</strong> via Android secure preferences. We do not maintain central user databases, nor do we track device advertising identifiers (GAID), GPS location, or personal contacts.</p>
+      </div>
+
+      <!-- 2. AI Processing -->
+      <div class="section-card">
+        <h2>⚡ 2. AI Processing & Generation</h2>
+        <p>When you generate carousel slides or analyze trending topics:</p>
+        <ul>
+          <li>Prompts, topics, or voice transcripts are transmitted securely over TLS/HTTPS encryption to our AI endpoints.</li>
+          <li>Data is processed ephemerally solely to generate your 6-slide carousel output.</li>
+          <li>Your input data is <strong>never stored, sold, or used to train public AI models</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Permissions -->
+      <div class="section-card">
+        <h2>📸 3. Media & Storage Permissions</h2>
+        <p>TrendForge requests device storage/media access strictly to save exported high-resolution PNG slide packs (1080x1350) and LinkedIn multi-page PDF documents to your device gallery, and to share them via the standard Android Share sheet.</p>
+      </div>
+
+      <!-- 4. Data Deletion -->
+      <div class="section-card">
+        <h2>🗑️ 4. Data Retention & Deletion</h2>
+        <p>Because all configuration data resides locally on your Android device, uninstalling the TrendForge application immediately and permanently deletes all stored data.</p>
+      </div>
+
+      <!-- 5. Contact Section -->
+      <div class="contact-box">
+        <h3>📬 Questions or Creator Inquiries?</h3>
+        <p>If you have any questions or feedback regarding this policy, contact our official support email:</p>
+        <a href="mailto:sanchitkumarsingh098@gmail.com" class="email-chip">
+          ✉️ sanchitkumarsingh098@gmail.com
+        </a>
+      </div>
+
+      <footer>
+        <span>© 2026 TrendForge. All rights reserved.</span>
+        <span>Google Play Store Verified Policy</span>
+      </footer>
+
     </div>
-    <h1>Privacy Policy</h1>
-    <div class="updated">Effective Date: August 20, 2026 • Google Play Store Compliance</div>
-
-    <p>TrendForge ("we", "our", or "the App") is committed to protecting your privacy. This policy outlines how user information is handled on Android.</p>
-
-    <h2>🔒 1. Zero Tracking & Local-First Storage</h2>
-    <div class="card">
-      <p>All creator branding preferences (Creator Name, @handle, Role, Theme Colors) are stored <strong>strictly locally on your device</strong>. We do not maintain user databases, nor do we track advertising identifiers (GAID), GPS location, or personal contacts.</p>
-    </div>
-
-    <h2>⚡ 2. AI Prompt & Generation Processing</h2>
-    <p>When generating carousel slides or analyzing topics:</p>
-    <ul>
-      <li>Prompts and topics are transmitted over secure, encrypted TLS/HTTPS connections to high-speed AI inference endpoints (Groq Cloud / Google AI).</li>
-      <li>Data is processed ephemerally and is <strong>never stored or used to train public foundation models</strong>.</li>
-    </ul>
-
-    <h2>📸 3. Media & Storage Permissions</h2>
-    <p>TrendForge requires storage permissions strictly to save your exported high-res 1080x1350 PNG slide packs and LinkedIn PDF documents to your local device gallery.</p>
-
-    <h2>🇮🇳 4. Global & Regional Compliance</h2>
-    <p>Fully compliant with the Google Play Developer Policy, Data Safety standards, and international consumer privacy frameworks.</p>
-
-    <h2>📬 5. Contact & Support</h2>
-    <p>For questions or support, contact the team at: <strong>support@trendforge.app</strong></p>
-
-    <footer>
-      © 2026 TrendForge. All rights reserved.
-    </footer>
   </div>
 </body>
 </html>
