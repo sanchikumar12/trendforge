@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | TrendForge – AI Carousel Maker</title>
+  <title>Privacy Policy & Data Safety | TrendForge – AI Carousel Maker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #09090E;
-      --card-bg: rgba(18, 18, 28, 0.85);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --accent: #6366F1;
-      --accent-glow: rgba(99, 102, 241, 0.25);
+      --bg: #07070B;
+      --surface: #0E0E17;
+      --card-bg: rgba(18, 18, 28, 0.75);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(99, 102, 241, 0.4);
+      --primary: #6366F1;
+      --primary-light: #818CF8;
+      --accent: #EC4899;
       --green: #10B981;
-      --text: #F1F5F9;
+      --text: #F8FAFC;
       --text-muted: #94A3B8;
       --text-sub: #64748B;
     }
@@ -24,259 +27,439 @@
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.65;
-      padding: 60px 20px;
+      line-height: 1.7;
       min-height: 100vh;
+      overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 100% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 40%);
+        radial-gradient(ellipse at 50% -20%, rgba(99, 102, 241, 0.25) 0%, transparent 70%),
+        radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
     }
-    .wrapper {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .glass-container {
-      background: var(--card-bg);
+
+    /* Top Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: 32px;
-      padding: 50px 44px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      background: rgba(7, 7, 11, 0.8);
+      border-bottom: 1px solid var(--border);
     }
-    .header-bar {
+    .nav-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-      gap: 16px;
     }
-    .brand {
+    .brand-group {
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
     }
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, #6366F1, #EC4899);
-      border-radius: 14px;
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      box-shadow: 0 8px 20px var(--accent-glow);
-    }
-    .brand-title {
       font-size: 20px;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+    }
+    .brand-name {
+      font-size: 19px;
       font-weight: 900;
       color: #FFFFFF;
       letter-spacing: -0.5px;
     }
-    .badge {
-      display: inline-flex;
+    .brand-name span {
+      background: linear-gradient(135deg, var(--primary-light), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .play-badge {
+      display: flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(16, 185, 129, 0.12);
-      color: var(--green);
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
       padding: 6px 14px;
       border-radius: 100px;
-      font-weight: 700;
       font-size: 11px;
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      font-weight: 700;
+      color: var(--green);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
       background: var(--green);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--green);
+      box-shadow: 0 0 10px var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.4; transform: scale(0.9); }
+    }
+
+    /* Main Container Layout */
+    .main-layout {
+      max-width: 1080px;
+      margin: 40px auto 80px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      position: sticky;
+      top: 90px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .sidebar-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .sidebar-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-link:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .sidebar-link.active {
+      color: var(--primary-light);
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    /* Main Document Area */
+    .doc-page {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 48px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .doc-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .doc-category {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
     }
     h1 {
-      font-size: 34px;
+      font-size: 36px;
       font-weight: 900;
       color: #FFFFFF;
       letter-spacing: -1px;
       line-height: 1.2;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
-    .meta {
+    .doc-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
       color: var(--text-sub);
       font-size: 13px;
-      margin-bottom: 36px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace;
     }
-    .intro {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 36px;
-      background: rgba(255, 255, 255, 0.02);
-      padding: 20px;
-      border-radius: 16px;
-      border-left: 3px solid var(--accent);
+
+    /* Document Sections */
+    .section {
+      margin-bottom: 40px;
+      scroll-margin-top: 100px;
     }
-    .section-card {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 26px;
-      margin-bottom: 20px;
-      transition: border-color 0.2s ease;
-    }
-    .section-card:hover {
-      border-color: rgba(99, 102, 241, 0.3);
-    }
-    .section-card h2 {
-      font-size: 18px;
+    .section h2 {
+      font-size: 20px;
       font-weight: 800;
       color: #FFFFFF;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 10px;
+      letter-spacing: -0.3px;
     }
-    .section-card p, .section-card li {
+    .section-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(99, 102, 241, 0.12);
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--primary-light);
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+    .highlight-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      margin: 18px 0;
+      border-left: 3px solid var(--primary);
+    }
+    ul {
+      padding-left: 22px;
+      margin-bottom: 16px;
+    }
+    li {
       color: var(--text-muted);
       font-size: 14px;
-      line-height: 1.65;
+      margin-bottom: 8px;
     }
-    .section-card ul {
-      padding-left: 20px;
-      margin-top: 10px;
+
+    /* Verification Grid */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
     }
-    .section-card li { margin-bottom: 8px; }
-    .contact-box {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.05));
+    .trust-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .trust-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .trust-desc {
+      font-size: 11.5px;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(236, 72, 153, 0.06));
       border: 1px solid rgba(99, 102, 241, 0.3);
-      border-radius: 24px;
-      padding: 30px;
-      margin-top: 36px;
+      border-radius: 22px;
+      padding: 32px;
+      margin-top: 48px;
       text-align: center;
     }
-    .contact-box h3 {
-      font-size: 18px;
-      font-weight: 800;
+    .contact-card h3 {
+      font-size: 20px;
+      font-weight: 900;
       color: #FFFFFF;
       margin-bottom: 8px;
     }
-    .contact-box p {
-      color: var(--text-muted);
-      font-size: 13px;
-      margin-bottom: 16px;
+    .contact-card p {
+      max-width: 500px;
+      margin: 0 auto 20px;
+      font-size: 13.5px;
     }
-    .email-chip {
+    .email-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.08);
+      gap: 10px;
+      background: linear-gradient(135deg, var(--primary), #4F46E5);
       color: #FFFFFF;
       font-family: 'JetBrains Mono', monospace;
       font-size: 14px;
       font-weight: 700;
-      padding: 12px 24px;
-      border-radius: 12px;
+      padding: 14px 28px;
+      border-radius: 14px;
       text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: all 0.2s ease;
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .email-chip:hover {
-      background: var(--accent);
-      border-color: var(--accent);
+    .email-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px var(--accent-glow);
+      box-shadow: 0 14px 35px rgba(99, 102, 241, 0.55);
     }
+
+    /* Footer */
     footer {
-      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding: 30px 24px;
       text-align: center;
       color: var(--text-sub);
       font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
-    @media (max-width: 640px) {
-      body { padding: 20px 12px; }
-      .glass-container { padding: 30px 20px; border-radius: 24px; }
-      h1 { font-size: 26px; }
+
+    @media (max-width: 860px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .doc-page { padding: 30px 20px; border-radius: 20px; }
+      h1 { font-size: 28px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="glass-container">
+
+  <!-- Top Sticky Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-group">
+        <div class="brand-logo">⚡</div>
+        <div class="brand-name">Trend<span>Forge</span></div>
+      </a>
+      <div class="play-badge">
+        <div class="pulse-dot"></div>
+        Google Play Verified
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    
+    <!-- Sidebar Table of Contents -->
+    <aside class="sidebar">
+      <div class="sidebar-title">Contents</div>
+      <nav class="sidebar-links">
+        <a href="#overview" class="sidebar-link active">⚡ Policy Overview</a>
+        <a href="#local-storage" class="sidebar-link">🔒 1. Local Storage</a>
+        <a href="#ai-engine" class="sidebar-link">🧠 2. AI Processing</a>
+        <a href="#permissions" class="sidebar-link">📸 3. App Permissions</a>
+        <a href="#retention" class="sidebar-link">🗑️ 4. Data Deletion</a>
+        <a href="#contact" class="sidebar-link">📬 5. Contact Support</a>
+      </nav>
+    </aside>
+
+    <!-- Document Page -->
+    <main class="doc-page">
       
-      <div class="header-bar">
-        <div class="brand">
-          <div class="brand-icon">⚡</div>
-          <span class="brand-title">TrendForge</span>
+      <div class="doc-header">
+        <div class="doc-category">Official Legal Documentation</div>
+        <h1>Privacy Policy & Data Safety</h1>
+        <div class="doc-meta">
+          <span>Effective: August 20, 2026</span>
+          <span>•</span>
+          <span>App: com.trendforge.trendforge</span>
         </div>
-        <div class="badge">Google Play Compliant</div>
       </div>
 
-      <h1>Privacy Policy</h1>
-      <div class="meta">
-        <span>📅 Effective Date: August 20, 2026</span>
-        <span>🛡️ Application: TrendForge – AI Carousel Maker</span>
-      </div>
-
-      <div class="intro">
-        TrendForge ("we", "our", or "the App") is committed to protecting your privacy and maintaining complete data transparency. This policy outlines how user data is handled with zero data selling or unauthorized tracking.
-      </div>
+      <!-- Overview -->
+      <section id="overview" class="section">
+        <p>Welcome to <strong>TrendForge – AI Carousel Maker</strong>. We believe in 100% data transparency and user privacy. This policy details how our Android application handles creator information, AI requests, and storage permissions with zero unauthorized tracking.</p>
+        
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-title">🔒 Local-First</div>
+            <div class="trust-desc">Zero external cloud user database accounts.</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-title">🚫 Zero Ads Tracking</div>
+            <div class="trust-desc">No GAID, GPS, or behavioral advertising tracking.</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-title">⚡ Encrypted AI</div>
+            <div class="trust-desc">Ephemeral TLS inference with zero model training.</div>
+          </div>
+        </div>
+      </section>
 
       <!-- 1. Local Storage -->
-      <div class="section-card">
-        <h2>🔒 1. Local-First Storage (Zero Cloud Profile Storage)</h2>
-        <p>Your Brand Kit details (Creator Name, @handle, Role, Theme Preferences) are stored <strong>exclusively on your local device</strong> via Android secure preferences. We do not maintain central user databases, nor do we track device advertising identifiers (GAID), GPS location, or personal contacts.</p>
-      </div>
+      <section id="local-storage" class="section">
+        <h2><span class="section-icon">🔒</span> 1. Local-First Profile Storage</h2>
+        <p>All creator configuration details—including your creator name, social media handle (<code>@handle</code>), professional role, and customized signature palette colors—are stored <strong>strictly locally on your Android device</strong> via secure <code>SharedPreferences</code>.</p>
+        <div class="highlight-card">
+          <p style="margin-bottom:0; color:#FFFFFF;"><strong>Guarantee:</strong> TrendForge does not upload or sync your personal identity or brand kit assets to third-party ad brokers or public clouds.</p>
+        </div>
+      </section>
 
       <!-- 2. AI Processing -->
-      <div class="section-card">
-        <h2>⚡ 2. AI Processing & Generation</h2>
-        <p>When you generate carousel slides or analyze trending topics:</p>
+      <section id="ai-engine" class="section">
+        <h2><span class="section-icon">🧠</span> 2. AI Generation & Ephemeral Processing</h2>
+        <p>When you create carousels or repurpose ideas:</p>
         <ul>
-          <li>Prompts, topics, or voice transcripts are transmitted securely over TLS/HTTPS encryption to our AI endpoints.</li>
-          <li>Data is processed ephemerally solely to generate your 6-slide carousel output.</li>
-          <li>Your input data is <strong>never stored, sold, or used to train public AI models</strong>.</li>
+          <li>Your input topics, voice transcripts, or article prompts are sent over encrypted TLS/HTTPS connections to high-speed AI inference endpoints (Groq / Gemini).</li>
+          <li>Inference happens ephemerally to produce the structured 6-slide narrative arc.</li>
+          <li>Your prompt data is <strong>never stored, sold, or used to train public foundation models</strong>.</li>
         </ul>
-      </div>
+      </section>
 
       <!-- 3. Permissions -->
-      <div class="section-card">
-        <h2>📸 3. Media & Storage Permissions</h2>
-        <p>TrendForge requests device storage/media access strictly to save exported high-resolution PNG slide packs (1080x1350) and LinkedIn multi-page PDF documents to your device gallery, and to share them via the standard Android Share sheet.</p>
-      </div>
+      <section id="permissions" class="section">
+        <h2><span class="section-icon">📸</span> 3. Media & Storage Permissions</h2>
+        <p>TrendForge requires storage/media permissions exclusively for two actions triggered directly by you:</p>
+        <ul>
+          <li><strong>PNG Pack Export:</strong> Saving individual high-resolution 1080x1350 px slides to your device gallery.</li>
+          <li><strong>LinkedIn PDF Export:</strong> Generating and saving multi-page swipeable document carousels.</li>
+        </ul>
+        <p>The app never scans, reads, or modifies unrelated files or photos in your gallery.</p>
+      </section>
 
-      <!-- 4. Data Deletion -->
-      <div class="section-card">
-        <h2>🗑️ 4. Data Retention & Deletion</h2>
-        <p>Because all configuration data resides locally on your Android device, uninstalling the TrendForge application immediately and permanently deletes all stored data.</p>
-      </div>
+      <!-- 4. Retention -->
+      <section id="retention" class="section">
+        <h2><span class="section-icon">🗑️</span> 4. Data Retention & Instant Deletion</h2>
+        <p>Because all user data resides locally on your Android device, simply uninstalling or clearing app data in Android Settings instantly and permanently deletes all stored brand kits and local cache files.</p>
+      </section>
 
-      <!-- 5. Contact Section -->
-      <div class="contact-box">
-        <h3>📬 Questions or Creator Inquiries?</h3>
-        <p>If you have any questions or feedback regarding this policy, contact our official support email:</p>
-        <a href="mailto:sanchitkumarsingh098@gmail.com" class="email-chip">
-          ✉️ sanchitkumarsingh098@gmail.com
-        </a>
-      </div>
+      <!-- 5. Contact -->
+      <section id="contact" class="section">
+        <div class="contact-card">
+          <h3>📬 Official Developer Contact</h3>
+          <p>For any privacy inquiries, Play Store verification questions, or developer support, contact our dedicated email:</p>
+          <a href="mailto:sanchitkumarsingh098@gmail.com" class="email-btn">
+            ✉️ sanchitkumarsingh098@gmail.com
+          </a>
+        </div>
+      </section>
 
-      <footer>
-        <span>© 2026 TrendForge. All rights reserved.</span>
-        <span>Google Play Store Verified Policy</span>
-      </footer>
+    </main>
 
-    </div>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <span>© 2026 TrendForge Mobile. Built for Content Creators.</span>
+      <span>Google Play Store Compliant Privacy Document</span>
+    </div>
+  </footer>
+
 </body>
 </html>
